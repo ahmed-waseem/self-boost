@@ -57,11 +57,11 @@ public class Percolation {
 			uf.union(val, valN);
 		}
 		// Top row block opened. Connect to virtual top - MAX
-		if (val >= 0 && val < size) 
+		if (r == 0) 
 			uf.union(MAX, val);
 		
 		// Bottom row block opened. Connect to virtual bottom - MAX + 1
-		if (val >= size*(size-1) && val < MAX) 
+		if (r == size-1) 
 			uf.union(MAX+1, val);
 	}         
 
